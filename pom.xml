@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>com.l2c</groupId>
-	<artifactId>stock-market-analyzer</artifactId>
+	<artifactId>equity-market-analyzer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>stock-market-analyzer</name>
+	<name>equity-market-analyzer</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -29,7 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
@@ -39,6 +38,10 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

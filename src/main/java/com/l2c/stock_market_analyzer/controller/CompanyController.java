@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
-@RequestMapping(value = "/alpha")
+@RequestMapping(value = "/api/v1")
 public class CompanyController {
     private final AlphaVantageImpl alphaVantageImpl;
 
@@ -17,12 +17,12 @@ public class CompanyController {
         this.alphaVantageImpl = alphaVantageImpl;
     }
 
-    @GetMapping("/company-profile")
-    public String getCompletCompanyProfile(@RequestParam String symbol) throws IOException {
-        return alphaVantageImpl.getCompletCompanyProfile(symbol);
+    @GetMapping("/standard-company-profile/{symbol}")
+    public String getCompleteCompanyProfile(@PathVariable String symbol) throws IOException {
+        return alphaVantageImpl.getCompleteCompanyProfile(symbol);
     }
 
-    @GetMapping("/company-profile/{symbol}")
+    @GetMapping("/custom-company-profile/{symbol}")
     public ResponseEntity<CompanyProfile> getCompanyProfile(@PathVariable String symbol) throws IOException {
         return ResponseEntity
                 .status(HttpStatus.OK)

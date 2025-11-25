@@ -17,7 +17,7 @@ public class AlphaVantageImpl {
     private final String BASE_URL_QUOTE_ENDPOINT = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE";
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public String getCompletCompanyProfile(String symbol) throws JsonProcessingException {
+    public String getCompleteCompanyProfile(String symbol) throws JsonProcessingException {
         String url = BASE_URL + "&symbol=" + symbol + "&apikey=" + API_KEY;
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         JsonNode node = new ObjectMapper().readTree(response.getBody());
